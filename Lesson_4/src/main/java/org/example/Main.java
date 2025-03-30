@@ -1,6 +1,7 @@
 package org.example;
 
 
+
 public class Main {
     public static void main(String[] args) {
         printThreeWords();
@@ -178,7 +179,7 @@ public class Main {
     // 14.
 
     static void  Arrays() {
-        int len = 4, initialValue = 7; // задаёт длину массива (4) и значение для заполнения (7)
+        int len = 4, initialValue = 7; //адаёт длину массива (4) и значение для заполнения (7)
         int[] arr = new int[len];
         for (int i = 0; i < len; i++) arr[i] = initialValue;
         System.out.println(java.util.Arrays.toString(arr)); // [7, 7, 7, 7]
