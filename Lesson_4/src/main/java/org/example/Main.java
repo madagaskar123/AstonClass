@@ -1,5 +1,4 @@
 package org.example;
-import java.util.Scanner;
 
 
 public class Main {
@@ -32,7 +31,11 @@ public class Main {
         int a = 1;
         int b = 2;
         int sum = a + b;
-        System.out.println(sum);
+        if (sum >= 0)
+        System.out.println("Сумма положительная");
+        else {
+            System.out.println("Сумма отрицательная");
+        }
     }
 
 // 3.
@@ -42,7 +45,7 @@ public class Main {
 
         if (value <= 0) {
             System.out.println("Красный");
-        } else if (value > 0 && value <= 100) {
+        } else if (value <= 100) {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
@@ -65,9 +68,9 @@ public class Main {
     //5.
 
     static void checkSumInRange() {
-        Scanner scan = new Scanner(System.in);
-        int a = scan.nextInt();
-        int b = scan.nextInt();
+
+        int a = 7;
+        int b = 8;
         int LowerBound = 10;
         int UpperBound = 20;
         int sum = a + b;
@@ -78,8 +81,7 @@ public class Main {
 
     // 6.
     static void checkPosAndNegNum() {
-        Scanner scan = new Scanner(System.in);
-        int a = scan.nextInt();
+        int a =5;
         if (a >= 0) {
             System.out.println("Число положительное");
         } else {
@@ -89,17 +91,16 @@ public class Main {
 
     //7.
     static void checkNum() {
-        Scanner scan = new Scanner(System.in);
-        int a = scan.nextInt();
+        int a = 3;
         boolean result = a >= 0;
         System.out.println(result);
     }
 
     //8.
     static void stringNum() {
-        Scanner scan = new Scanner(System.in);
-        String a = scan.nextLine();
-        int b = scan.nextInt();
+
+        String a = "Здравствуйте";
+        int b = 3;
         if (b <= 0) {
             System.out.println("Количество повторений должно быть положительным числом");
         }
@@ -111,8 +112,7 @@ public class Main {
 
     // 9.
     static boolean leapYear() {
-        Scanner scan = new Scanner(System.in);
-        int year = scan.nextInt();
+        int year = 1300;
         boolean result = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
         System.out.println(result);
         return result;
@@ -139,9 +139,20 @@ public class Main {
     }
     // 12.
     static void ArrayMultiplier() {
-        int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        for (int num : arr) {
-            System.out.println((num < 6 ? num * 2 : num) + " ");
+        int[] array = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+
+        // Сначала изменяем массив (числа < 6 умножаем на 2)
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 6) {
+                array[i] *= 2;
+            }
+        }
+        // Затем выводим изменённый массив
+        System.out.println("Изменённый массив:");
+        for (int num : array) {
+            System.out.print(num + " ");
+
+
         }
 
     }
@@ -167,10 +178,10 @@ public class Main {
     // 14.
 
     static void  Arrays() {
-        int len = 5, initialValue = 10;
+        int len = 4, initialValue = 7; // задаёт длину массива (4) и значение для заполнения (7)
         int[] arr = new int[len];
         for (int i = 0; i < len; i++) arr[i] = initialValue;
-        System.out.println(java.util.Arrays.toString(arr)); // [10, 10, 10, 10, 10]
+        System.out.println(java.util.Arrays.toString(arr)); // [7, 7, 7, 7]
     }
 
 
