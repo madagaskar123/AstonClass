@@ -8,11 +8,11 @@ public class Main {
         checkSumSign();
         printColor();
         compareNumbers();
-        checkSumInRange();
-        checkPosAndNegNum();
-        checkNum();
-        stringNum();
-        leapYear();
+        checkSumInRange(5, 6);
+        checkPosAndNegNum(5);
+        checkNum(3);
+        stringNum(4, "Здравствуйте");
+        leapYear(1300);
         InvertArray();
         FillArray();
         ArrayMultiplier();
@@ -68,21 +68,21 @@ public class Main {
     }
     //5.
 
-    static void checkSumInRange() {
+    static boolean checkSumInRange(int a, int b) {
 
-        int a = 7;
-        int b = 8;
+
         int LowerBound = 10;
         int UpperBound = 20;
         int sum = a + b;
         boolean result = sum >= LowerBound && sum <= UpperBound;
         System.out.println(result);
+        return result;
 
     }
 
     // 6.
-    static void checkPosAndNegNum() {
-        int a =5;
+    static void checkPosAndNegNum(int a) {
+
         if (a >= 0) {
             System.out.println("Число положительное");
         } else {
@@ -91,17 +91,16 @@ public class Main {
     }
 
     //7.
-    static void checkNum() {
-        int a = 3;
+    static boolean checkNum(int a) {
+
         boolean result = a >= 0;
         System.out.println(result);
+        return result;
     }
 
     //8.
-    static void stringNum() {
+    static void stringNum(int b, String a) {
 
-        String a = "Здравствуйте";
-        int b = 3;
         if (b <= 0) {
             System.out.println("Количество повторений должно быть положительным числом");
         }
@@ -112,8 +111,8 @@ public class Main {
     }
 
     // 9.
-    static boolean leapYear() {
-        int year = 1300;
+    static boolean leapYear(int year) {
+
         boolean result = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
         System.out.println(result);
         return result;
