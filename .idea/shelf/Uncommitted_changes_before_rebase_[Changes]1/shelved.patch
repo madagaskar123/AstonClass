@@ -1,0 +1,155 @@
+Index: Lesson_4/src/main/java/org/example/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\nimport java.util.Scanner;\r\n\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        printThreeWords();\r\n        checkSumSign();\r\n        printColor();\r\n        compareNumbers();\r\n        checkSumInRange();\r\n        checkPosAndNegNum();\r\n        checkNum();\r\n        stringNum();\r\n        leapYear();\r\n        InvertArray();\r\n        FillArray();\r\n        ArrayMultiplier();\r\n        DiagonalArray();\r\n        Arrays();\r\n\r\n    }\r\n\r\n    // 1.\r\n    static void printThreeWords() {\r\n        System.out.println(\"Orange\" + \"\\n\" + \"Banana\" + \"\\n\" + \"Apple\");\r\n    }\r\n\r\n    // 2.\r\n    static void checkSumSign() {\r\n\r\n        int a = 1;\r\n        int b = 2;\r\n        int sum = a + b;\r\n        System.out.println(sum);\r\n    }\r\n\r\n// 3.\r\n\r\n    static void printColor() {\r\n        int value = 50;\r\n\r\n        if (value <= 0) {\r\n            System.out.println(\"Красный\");\r\n        } else if (value > 0 && value <= 100) {\r\n            System.out.println(\"Желтый\");\r\n        } else {\r\n            System.out.println(\"Зеленый\");\r\n        }\r\n    }\r\n\r\n\r\n// 4.\r\n\r\n    static void compareNumbers() {\r\n        int a = 15; // Первая переменная (можно изменить)\r\n        int b = 10; // Вторая переменная (можно изменить)\r\n\r\n        if (a >= b) {\r\n            System.out.println(\"a >= b\");\r\n        } else if (a == 0) {\r\n            System.out.println(\"a < b\");\r\n        }\r\n    }\r\n    //5.\r\n\r\n    static void checkSumInRange() {\r\n        Scanner scan = new Scanner(System.in);\r\n        int a = scan.nextInt();\r\n        int b = scan.nextInt();\r\n        int LowerBound = 10;\r\n        int UpperBound = 20;\r\n        int sum = a + b;\r\n        boolean result = sum >= LowerBound && sum <= UpperBound;\r\n        System.out.println(result);\r\n\r\n    }\r\n\r\n    // 6.\r\n    static void checkPosAndNegNum() {\r\n        Scanner scan = new Scanner(System.in);\r\n        int a = scan.nextInt();\r\n        if (a >= 0) {\r\n            System.out.println(\"Число положительное\");\r\n        } else {\r\n            System.out.println(\"Число отрицательоне\");\r\n        }\r\n    }\r\n\r\n    //7.\r\n    static void checkNum() {\r\n        Scanner scan = new Scanner(System.in);\r\n        int a = scan.nextInt();\r\n        boolean result = a >= 0;\r\n        System.out.println(result);\r\n    }\r\n\r\n    //8.\r\n    static void stringNum() {\r\n        Scanner scan = new Scanner(System.in);\r\n        String a = scan.nextLine();\r\n        int b = scan.nextInt();\r\n        if (b <= 0) {\r\n            System.out.println(\"Количество повторений должно быть положительным числом\");\r\n        }\r\n\r\n        for (int i = 0; i < b; i++) {\r\n            System.out.println(a);\r\n        }\r\n    }\r\n\r\n    // 9.\r\n    static boolean leapYear() {\r\n        Scanner scan = new Scanner(System.in);\r\n        int year = scan.nextInt();\r\n        boolean result = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;\r\n        System.out.println(result);\r\n        return result;\r\n    }\r\n    // 10.\r\n    static void InvertArray() {\r\n        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};\r\n\r\n        for (int i = 0; i < arr.length; i++) {\r\n            arr[i] = arr[i] == 0 ? 1 : 0;\r\n            System.out.println(arr[i] + \" \");\r\n\r\n        }\r\n    }\r\n    // 11.\r\n    static void  FillArray() {\r\n\r\n        int[] arr = new int[100];\r\n        for (int i = 0; i < arr.length; i++) {\r\n            arr[i] = i + 1;\r\n            System.out.println(arr[i] + \" \");\r\n        }\r\n\r\n    }\r\n    // 12.\r\n    static void ArrayMultiplier() {\r\n        int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};\r\n        for (int num : arr) {\r\n            System.out.println((num < 6 ? num * 2 : num) + \" \");\r\n        }\r\n\r\n    }\r\n    // 13.\r\n    static void DiagonalArray(){\r\n\r\n        int size = 5; // Размер квадратного массива\r\n        int[][] matrix = new int[size][size];\r\n        // Заполняем главную диагональ единицами\r\n        for (int i = 0; i < size; i++) {\r\n            matrix[i][i] = 1; // Главная диагональ\r\n            matrix[i][size - 1 - i] = 1; // Побочная диагональ (дополнительно)\r\n        }\r\n        // Выводим массив\r\n        for (int i = 0; i < size; i++) {\r\n            for (int j = 0; j < size; j++) {\r\n                System.out.print(matrix[i][j] + \" \");\r\n            }\r\n            System.out.println();\r\n        }\r\n\r\n    }\r\n    // 14.\r\n\r\n    static void  Arrays() {\r\n        int len = 5, initialValue = 10;\r\n        int[] arr = new int[len];\r\n        for (int i = 0; i < len; i++) arr[i] = initialValue;\r\n        System.out.println(java.util.Arrays.toString(arr)); // [10, 10, 10, 10, 10]\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Lesson_4/src/main/java/org/example/Main.java b/Lesson_4/src/main/java/org/example/Main.java
+--- a/Lesson_4/src/main/java/org/example/Main.java	(revision a2c26d17b5bf41a518026caede16b95e6fcdd118)
++++ b/Lesson_4/src/main/java/org/example/Main.java	(date 1743337218173)
+@@ -32,7 +32,11 @@
+         int a = 1;
+         int b = 2;
+         int sum = a + b;
+-        System.out.println(sum);
++        if (sum >= 0)
++        System.out.println("Сумма положительная");
++        else {
++            System.out.println("Сумма отрицательная");
++        }
+     }
+ 
+ // 3.
+@@ -42,7 +46,7 @@
+ 
+         if (value <= 0) {
+             System.out.println("Красный");
+-        } else if (value > 0 && value <= 100) {
++        } else if (value <= 100) {
+             System.out.println("Желтый");
+         } else {
+             System.out.println("Зеленый");
+@@ -65,9 +69,9 @@
+     //5.
+ 
+     static void checkSumInRange() {
+-        Scanner scan = new Scanner(System.in);
+-        int a = scan.nextInt();
+-        int b = scan.nextInt();
++
++        int a = 7;
++        int b = 8;
+         int LowerBound = 10;
+         int UpperBound = 20;
+         int sum = a + b;
+@@ -78,8 +82,7 @@
+ 
+     // 6.
+     static void checkPosAndNegNum() {
+-        Scanner scan = new Scanner(System.in);
+-        int a = scan.nextInt();
++        int a =5;
+         if (a >= 0) {
+             System.out.println("Число положительное");
+         } else {
+@@ -89,17 +92,16 @@
+ 
+     //7.
+     static void checkNum() {
+-        Scanner scan = new Scanner(System.in);
+-        int a = scan.nextInt();
++        int a = 3;
+         boolean result = a >= 0;
+         System.out.println(result);
+     }
+ 
+     //8.
+     static void stringNum() {
+-        Scanner scan = new Scanner(System.in);
+-        String a = scan.nextLine();
+-        int b = scan.nextInt();
++
++        String a = "Здравствуйте";
++        int b = 3;
+         if (b <= 0) {
+             System.out.println("Количество повторений должно быть положительным числом");
+         }
+@@ -111,8 +113,7 @@
+ 
+     // 9.
+     static boolean leapYear() {
+-        Scanner scan = new Scanner(System.in);
+-        int year = scan.nextInt();
++        int year = 1300;
+         boolean result = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+         System.out.println(result);
+         return result;
+Index: Lesson_6/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Lesson_6/pom.xml b/Lesson_6/pom.xml
+new file mode 100644
+--- /dev/null	(date 1743337218188)
++++ b/Lesson_6/pom.xml	(date 1743337218188)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <modelVersion>4.0.0</modelVersion>
++    <parent>
++        <groupId>org.example</groupId>
++        <artifactId>AstonClass</artifactId>
++        <version>1.0-SNAPSHOT</version>
++    </parent>
++
++    <artifactId>Lesson_6</artifactId>
++
++    <properties>
++        <maven.compiler.source>23</maven.compiler.source>
++        <maven.compiler.target>23</maven.compiler.target>
++        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++    </properties>
++
++</project>
+\ No newline at end of file
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>org.example</groupId>\r\n    <artifactId>AstonClass</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <packaging>pom</packaging>\r\n    <modules>\r\n        <module>Lesson_4</module>\r\n    </modules>\r\n\r\n    <properties>\r\n        <maven.compiler.source>23</maven.compiler.source>\r\n        <maven.compiler.target>23</maven.compiler.target>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n    </properties>\r\n\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision a2c26d17b5bf41a518026caede16b95e6fcdd118)
++++ b/pom.xml	(date 1743337218177)
+@@ -10,6 +10,7 @@
+     <packaging>pom</packaging>
+     <modules>
+         <module>Lesson_4</module>
++        <module>Lesson_6</module>
+     </modules>
+ 
+     <properties>
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Encoding\">\r\n    <file url=\"file://$PROJECT_DIR$/Lesson_4/src/main/java\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/Lesson_4/src/main/resources\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/src/main/java\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/src/main/resources\" charset=\"UTF-8\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	(revision a2c26d17b5bf41a518026caede16b95e6fcdd118)
++++ b/.idea/encodings.xml	(date 1743337218183)
+@@ -3,6 +3,8 @@
+   <component name="Encoding">
+     <file url="file://$PROJECT_DIR$/Lesson_4/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/Lesson_4/src/main/resources" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/Lesson_6/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/Lesson_6/src/main/resources" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+   </component>
